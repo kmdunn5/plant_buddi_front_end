@@ -5,7 +5,7 @@ let baseURL = '';
 if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:3003';
 } else {
-  baseURL = 'heroku URL';
+  baseURL = 'https://plant-buddi-backend.herokuapp.com';
 };
 
 class AddForm extends Component {

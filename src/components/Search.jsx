@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import AddForm from './AddForm'
 
-let baseURL = '';
-
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:3003';
-} else {
-  baseURL = 'heroku URL';
-};
 
 class Search extends Component {
     constructor(props) {

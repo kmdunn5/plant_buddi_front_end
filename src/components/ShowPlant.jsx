@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 // import UpdatePlantForm from './UpdatePlantForm'
 
+let baseURL = '';
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003';
+} else {
+  baseURL = 'https://plant-buddi-backend.herokuapp.com';
+};
 
 class ShowPlant extends Component {
   constructor ( props ) {
