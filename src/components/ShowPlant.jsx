@@ -48,13 +48,9 @@ class ShowPlant extends Component {
   deletePlant = () => {
     fetch( baseURL + '/plants/' + this.props.match.params._id, {
       method: 'DELETE'
-    }).then( resJson => {
-      const findIndex = this.state.plants.findIndex( ( plant ) => plant._id === resJson._id )
-      const copyPlants = [ ...this.state.plants ]
-      copyPlants.splice( findIndex, 1 )
-      this.setState({ 
+    })
+    this.setState({ 
         redirect: true 
-      })
     })
   }
 
@@ -71,8 +67,8 @@ class ShowPlant extends Component {
           <div className='user-actions-header'>
             <h2>Your Plant Buddi</h2>
             <div className='user-action-options'>
-              <button className='primary-button' onClick={ () => this.toggleUpdateView( this.state.plant._id ) }>Edit</button>
-              <button className='secondary-button' onClick={ () => this.deletePlant( this.props.plant._id ) }>Delete</button>
+              <button className='primary-button' onClick={ () => this.toggleUpdateView() }>Edit</button>
+              <button className='secondary-button' onClick={ () => this.deletePlant() }>Delete</button>
             </div>
           </div>
           <div className='show-plant-container'>
