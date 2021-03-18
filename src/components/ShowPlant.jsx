@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-// import UpdatePlantForm from './UpdatePlantForm'
+import { Redirect, Link } from 'react-router-dom'
 
 let baseURL = '';
 
@@ -102,7 +101,7 @@ class ShowPlant extends Component {
               </div>
             </div>
           </div>
-          <button className='primary-button'>Back to plants</button>
+          <Link to='/plants'> <button className='primary-button'>Back to plants</button></Link>
         </div>
         ) : (
           <div>
