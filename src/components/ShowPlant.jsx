@@ -16,7 +16,7 @@ class ShowPlant extends Component {
       plant: '',
       nickName: '',
       image: '',
-      lastWatered: 'Not Watered Yet',
+      lastWatered: '',
       howOftenToWater: '',
       lastFertilized: '',
       lightingRequirements: '',
@@ -26,12 +26,8 @@ class ShowPlant extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleUpdate = this.handleUpdate.bind(this)
 
-  }
-
-  // HANDLE FORM CHANGE EVENT
-  handleChange = ( event ) => {
-    this.setState({ [event.target.id]: event.target.value })
   }
 
   componentDidMount() {
@@ -40,7 +36,14 @@ class ShowPlant extends Component {
         return data.json()},
         err => console.log(err))
       .then(parsedData => this.setState({
-        plant: parsedData
+        plant: parsedData,
+        nickName: parsedData.nickName,
+        image: parsedData.image,
+        lastWatered: parsedData.lastWatered,
+        howOftenToWater: parsedData.howOftenToWater,
+        lastFertilized: parsedData.lastFertilized,
+        lightingRequirements: parsedData.lightingRequirements,
+        notes: parsedData.notes,
       }),
        err=> console.log(err))
   }
@@ -61,6 +64,52 @@ class ShowPlant extends Component {
     }))
   }
 
+  // HANDLE FORM CHANGE EVENT
+  handleChange = ( event ) => {
+    this.setState({ [event.target.id]: event.target.value })
+  }
+
+  // HANDLE UPDATE FRONTEND
+  handleUpdatePlant = ( plant ) => {
+    this.setState({
+      plant: plant,
+      nickName: plant.nickName,
+      image: plant.image,
+      lastWatered: plant.lastWatered,
+      howOftenToWater: plant.howOftenToWater,
+      lastFertilized: plant.lastFertilized,
+      lightingRequirements: plant.lightingRequirements,
+      notes: plant.notes,
+      update: false
+    })
+  }
+
+  // HANDLE UPDATE BACKEND
+  handleUpdate = ( event, idOfPlant ) => {
+    event.preventDefault()
+
+    fetch( baseURL + '/plants/' + this.props.match.params.id, {
+      method: 'PUT',
+      body: JSON.stringify(
+        { nickName: this.state.nickName,
+          image: this.state.image,
+          lastWatered: this.state.lastWatered,
+          howOftenToWater: this.state.howOftenToWater,
+          lastFertilized: this.state.lastFertilized,
+          lightingRequirements: this.state.lightingRequirements,
+          notes: this.state.notes
+        }
+      ),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then ( res => res.json() )
+      .then ( resJson => {
+        this.handleUpdatePlant( resJson )
+    }).catch ( error => console.error( {'Error': error} ))
+  }
+
+
   render() {
     if (this.state.redirect) {
       return(
@@ -80,7 +129,7 @@ class ShowPlant extends Component {
           </div>
           <div className='show-plant-container'>
             <div className='show-plant-img'>
-              <img src={this.state.plant.image} alt='Plant' />
+              <img src={this.state.plant.image} alt={ this.state.plant.commonName } />
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
@@ -106,14 +155,14 @@ class ShowPlant extends Component {
         ) : (
           <div>
           <h1>Edit Plant</h1>
-          <form>
+          <form onSubmit={ ( event ) => this.handleUpdate( event, this.state.plant._id ) } >
             <div className='input-couple'>
               <label htmlFor="nickName">Nick Name: </label>
-              <input type="text" name="nickName" id="nickName" onChange={this.handleChange} value={ this.state.plant.nickName }/>
+              <input type="text" name="nickName" id="nickName" onChange={this.handleChange} value={ this.state.nickName }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="image">Image: </label>
-              <input type="text" name="image" id="image" onChange={this.handleChange} value={ this.state.plant.image }/>
+              <input type="text" name="image" id="image" onChange={this.handleChange} value={ this.state.image }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="lastWatered">Last Watered: </label>
@@ -121,23 +170,23 @@ class ShowPlant extends Component {
             </div>
             <div className='input-couple'>
               <label htmlFor="howOftenToWater">How Often To Water: </label>
-              <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.plant.howOftenToWater } />
+              <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.howOftenToWater } />
             </div>
             <div className='input-couple'>
               <label htmlFor="lastFertilized">Last Fertilized: </label>
-              <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.state.plant.lastFertilized }/>
+              <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.state.lastFertilized }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="lightingRequirements">Light Needs: </label>
-              <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.state.plant.lightingRequirements } />
+              <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.state.lightingRequirements } />
             </div>
             <div className='input-couple'>
               <label htmlFor="notes">Notes: </label>
-              <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.plant.notes }/>
+              <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes }/>
             </div>
             <div className='form-actions'>
               <button className='primary-button' type="submit">Update plant buddi</button>
-              <button className='secondary-button' onClick={ () => this.toggleUpdateView( this.state.plant._id ) }>Cancel</button>
+              <button className='secondary-button' onClick={ () => this.toggleUpdateView( ) }>Cancel</button>
             </div>
           </form>
         </div> 
