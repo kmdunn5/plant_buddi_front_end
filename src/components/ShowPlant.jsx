@@ -55,12 +55,11 @@ class ShowPlant extends Component {
   }
 
   deletePlant = () => {
-    fetch( baseURL + '/plants/' + this.props.match.params._id, {
+    fetch( baseURL + '/plants/' + this.props.match.params.id, {
       method: 'DELETE'
-    })
-    this.setState({ 
+    }).then(this.setState({ 
         redirect: true 
-    })
+    }))
   }
 
   render() {
