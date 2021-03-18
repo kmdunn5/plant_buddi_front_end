@@ -82,7 +82,7 @@ class ShowPlant extends Component {
           </div>
           <div className='show-plant-container'>
             <div className='show-plant-img'>
-              <img src='https://i.ibb.co/w4x4jFC/3df51f155b9083e5facd284384d85c70c7605e8c.jpg' alt='Plant' />
+              <img src={this.state.plant.image} alt='Plant' />
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
