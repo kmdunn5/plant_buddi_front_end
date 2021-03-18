@@ -35,16 +35,16 @@ class Search extends Component {
                 <div className='plant-item-grid'>
                 {this.props.foundPlants.map(plant => {
                     return(
-                        <div key={plant.id} className='plant-item'>
-                            <div className='plant-item-img'>
-                                <img className='card-img' src={plant.image_url} alt={plant.common_name}/>
+                        <div key={plant.id} className='search-plant-item'>
+                            <div className='plant-item-img-search'>
+                                <img className='search-card-img' src={plant.image_url} alt={plant.common_name}/>
                             </div>
                             <div>
-                                <p>{plant.common_name}</p>
+                                <p className='search-name'>{plant.common_name}</p>
                             </div>
                             <div className='add-button'>
                                 <form onSubmit={(e) => this.goToAdd(plant, e)}>
-                                    <input type="submit" value="Add Plant"/>
+                                    <input className='addplantbutton' type="submit" value="+"/>
                                 </form>
                             </div>
                         </div>

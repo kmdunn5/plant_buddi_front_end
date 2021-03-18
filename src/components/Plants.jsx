@@ -93,29 +93,23 @@ class Plants extends Component {
                 </div>
                 </Link>
                 <div className='plant-item-name-content'>
-                  <div className='icon-container'>
-                    <p>🍃</p>
-                  </div>
                   <div className='plant-item-name-content'>
-                    <div className='icon-container'>
-                      <p>🍃</p>
-                    </div>
                     <div className='plant-item-name'>
+                      <div className='nameandwater'>
                       <h3>{ plant.commonName }</h3>
                     </div>
                   </div>
                   <div className='plant-item-watered-content'>
-                    <div className='icon-container'>
-                      <p>💧</p>
-                    </div>
                     <div className='plant-item-watered'>
-                      <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
-                      <div className='edit-icon-container'>
-                        <p>✏️</p>
+                      <p className='large-text'><span className='semibold-text'>Last Watered:</span> { plant.lastWatered }</p>
                       </div>
+                      <div className='editandtrashbutton'>
+                      <div className='edit-icon-container'>
+                        </div>
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             )
             })}
