@@ -15,11 +15,26 @@ class ShowPlant extends Component {
 
     this.state = {
       plant: this.props.plant,
+      nickName: this.props.plant.nickName,
+      image: this.props.plant.image,
+      lastWatered: this.props.plant.lastWatered,
+      howOftenToWater: this.props.plant.howOftenToWater,
+      lastFertilized: this.props.plant.lastFertilized,
+      lightingRequirements: this.props.plant.lightingRequirements,
+      notes: this.props.plant.notes,
       update: true
     }
 
+    this.handleChange = this.handleChange.bind(this)
+
   }
 
+  // HANDLE FORM CHANGE EVENT
+  handleChange = ( event ) => {
+    this.setState({ [event.target.id]: event.target.value })
+  }
+
+  
   // TOGGLE UPDATE VIEW
   toggleUpdateView( idOfPlant ) {
     this.setState({
@@ -67,34 +82,34 @@ class ShowPlant extends Component {
         ) : (
           <div>
           <h1>Edit Plant</h1>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <div className='input-couple'>
               <label htmlFor="nickName">Nick Name: </label>
-              <input type="text" name="nickName" id="nickName" onChange={this.handleChange} value={ this.props.plant.nickName }/>
+              <input type="text" name="nickName" id="nickName" onChange={ this.handleChange } value={ this.state.nickName }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="image">Image: </label>
-              <input type="text" name="image" id="image" onChange={this.handleChange} value={ this.props.plant.image }/>
+              <input type="text" name="image" id="image" onChange={ this.handleChange } value={ this.state.image }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="lastWatered">Last Watered: </label>
-              <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange} value={ this.props.plant.lastWatered }/>
+              <input type="text" name="lastWatered" id="lastWatered" onChange={ this.handleChange } value={ this.state.lastWatered }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="howOftenToWater">How Often To Water: </label>
-              <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.props.plant.howOftenToWater } />
+              <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={ this.handleChange } value={ this.state.howOftenToWater } />
             </div>
             <div className='input-couple'>
               <label htmlFor="lastFertilized">Last Fertilized: </label>
-              <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.props.plant.lastFertilized }/>
+              <input type="text" name="lastFertilized" id="lastFertilized" onChange={ this.handleChange } value={ this.state.lastFertilized }/>
             </div>
             <div className='input-couple'>
               <label htmlFor="lightingRequirements">Light Needs: </label>
-              <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.props.plant.lightingRequirements } />
+              <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={ this.handleChange } value={ this.state.lightingRequirements } />
             </div>
             <div className='input-couple'>
               <label htmlFor="notes">Notes: </label>
-              <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.props.plant.notes }/>
+              <input type="text" name="notes" id="notes" onChange={ this.handleChange } value={ this.state.notes }/>
             </div>
             <div className='form-actions'>
               <button className='primary-button' type="submit">Update plant buddi</button>
