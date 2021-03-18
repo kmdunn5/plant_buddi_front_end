@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-// import { Route, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Search from './Search'
-// import ShowPlant from './ShowPlant'
 
 
 let baseURL = '';
@@ -70,21 +69,6 @@ class Plants extends Component {
     });
   };
 
-  // DELETE PLANT
-  deletePlant = ( idOfPlant ) => {
-    fetch( baseURL + '/plants/' + idOfPlant, {
-      method: 'DELETE'
-    }).then( response => {
-      const findIndex = this.state.plants.findIndex( ( plant ) => plant._id === idOfPlant )
-      const copyPlants = [ ...this.state.plants ]
-      copyPlants.splice( findIndex, 1 )
-      console.log( findIndex )
-      this.setState({ 
-        plants: copyPlants 
-      })
-    })
-  }
-
   render() {
     return (
       <div>
@@ -92,9 +76,7 @@ class Plants extends Component {
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='search'>Search for a Plant Buddi: </label>
             <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search} className='search'/>
-            <input 
-            className='search-button'
-            type="submit" value="Search"/>
+            <input className='search-button' type="submit" value="Search"/>
           </form>
         </div>
         {this.state.searchState ? 
@@ -105,9 +87,11 @@ class Plants extends Component {
             { this.state.plants.map( plant => {
             return (
               <div key={ plant._id } className='plant-item'>
+                <Link to={`/plants/${plant._id}`}>
                 <div className='plant-item-img'>
                   <img className='card-img' src={ plant.image } alt={ plant.commonName } />
                 </div>
+                </Link>
                 <div className='plant-item-name-content'>
                   <div className='plant-item-name-content'>
                     <div className='plant-item-name'>
@@ -125,7 +109,6 @@ class Plants extends Component {
                     </div>
                   </div>
                 </div>
-                {/* < ShowPlant plant={ plant } deletePlant={ this.deletePlant }/> */}
               </div>
               </div>
             )
