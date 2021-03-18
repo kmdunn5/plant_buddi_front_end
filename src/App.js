@@ -6,7 +6,7 @@ import Plants from './components/Plants.jsx'
 import Home from './components/Home.jsx'
 import SignUp from './components/SignUp.jsx'
 import Login from './components/Login.jsx'
-import Search from './components/Search.jsx'
+import ShowPlant from './components/ShowPlant'
 
 
 class App extends Component {
@@ -17,10 +17,10 @@ class App extends Component {
         < Header />
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route exact path='/plants' component={Plants}/>
-          <Route exact path='/plant/find' component={Search}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/signup' component={SignUp}/>
+          <Route exact path='/plants' component={Plants}/>
+          <Route exact path='/plants/:id' component={ShowPlant}/>
         </Switch>
         < Footer />
       </div>
