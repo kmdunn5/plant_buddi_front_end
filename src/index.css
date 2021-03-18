@@ -102,6 +102,7 @@ button, .search-button{
   min-height: 300px;
   width: auto;
   height: auto;
+  margin-left: -10px;
 }
 
 .header-container-signup, .header-container-login {
