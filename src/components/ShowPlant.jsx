@@ -25,6 +25,14 @@ class ShowPlant extends Component {
       update: false,
       redirect: false
     }
+
+    this.handleChange = this.handleChange.bind(this)
+
+  }
+
+  // HANDLE FORM CHANGE EVENT
+  handleChange = ( event ) => {
+    this.setState({ [event.target.id]: event.target.value })
   }
 
   componentDidMount() {
@@ -38,6 +46,7 @@ class ShowPlant extends Component {
        err=> console.log(err))
   }
 
+  
   // TOGGLE UPDATE VIEW
   toggleUpdateView() {
     this.setState({
@@ -46,12 +55,11 @@ class ShowPlant extends Component {
   }
 
   deletePlant = () => {
-    fetch( baseURL + '/plants/' + this.props.match.params._id, {
+    fetch( baseURL + '/plants/' + this.props.match.params.id, {
       method: 'DELETE'
-    })
-    this.setState({ 
+    }).then(this.setState({ 
         redirect: true 
-    })
+    }))
   }
 
   render() {
@@ -73,7 +81,7 @@ class ShowPlant extends Component {
           </div>
           <div className='show-plant-container'>
             <div className='show-plant-img'>
-              <img src='https://i.ibb.co/w4x4jFC/3df51f155b9083e5facd284384d85c70c7605e8c.jpg' alt='Plant' />
+              <img src={this.state.plant.image} alt='Plant' />
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
@@ -99,7 +107,7 @@ class ShowPlant extends Component {
         ) : (
           <div>
           <h1>Edit Plant</h1>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <div className='input-couple'>
               <label htmlFor="nickName">Nick Name: </label>
               <input type="text" name="nickName" id="nickName" onChange={this.handleChange} value={ this.state.plant.nickName }/>
@@ -138,8 +146,8 @@ class ShowPlant extends Component {
       </div>
     )
   }
-
-}       
+}
+       
 
 
 export default ShowPlant;
