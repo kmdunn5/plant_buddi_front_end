@@ -133,7 +133,7 @@ class ShowPlant extends Component {
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
-                { this.state.plant.nickName == '' &&
+                { this.state.plant.nickName === '' &&
                   <h2>{ this.state.plant.commonName }</h2>
                 }
                 { this.state.plant.nickName !== '' &&
