@@ -105,7 +105,7 @@ class AddForm extends Component {
                     <div className='row notes'>
                         <div className='form-group'>
                             <label htmlFor="notes" className='form-label'>Notes: </label>
-                            <input type="text" name="notes" id="notes" onChange={this.handleChange} className='textarea-input'/>
+                            <textarea  name="notes" id="notes" onChange={this.handleChange} className='textarea-input' rows='5' cols='200'/>
                         </div>
                     </div>
                     <div className='row-button'>

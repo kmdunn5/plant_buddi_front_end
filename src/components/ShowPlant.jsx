@@ -206,7 +206,7 @@ class ShowPlant extends Component {
             <div className='row'>
               <div className='form-group'>
                 <label htmlFor="notes">Notes: </label>
-                <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } className='textarea-input'/>
+                <textarea name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } rows='5' cols='200' className='textarea-input'/>
               </div>
             </div>
             <div className='row-button'>
