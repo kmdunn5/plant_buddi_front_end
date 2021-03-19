@@ -71,28 +71,48 @@ class AddForm extends Component {
 
     render() {
         return(
-            <div>
-                <h3>{this.props.plant.common_name} - <span>{this.props.plant.scientific_name}</span></h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="nickName">Nick Name: </label>
-                    <input type="text" name="nickName" id="nickName" onChange={this.handleChange}/>
-                    <label htmlFor="image">Image: </label>
-                    <input type="text" name="image" id="image" onChange={this.handleChange} value={this.state.image}/>
-                    <label htmlFor="lastWatered">Last Watered: </label>
-                    <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange}/>
-                    <label htmlFor="howOftenToWater">How Often To Water: </label>
-                    <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange}/>
-                    <label htmlFor="lastFertilized">Last Fertilized: </label>
-                    <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange}/>
-                    <label htmlFor="lightingRequirements">Light Needs: </label>
-                    <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange}/>
-                    <label htmlFor="notes">Notes: </label>
-                    <input type="text" name="notes" id="notes" onChange={this.handleChange}/>
-                    <input type="submit" value="Add Plant"/>
+            <div className='form-container'>
+                <h3>{this.props.plant.common_name} - <span>{this.props.plant.scientific_name}</span></h3><br/>
+                <form onSubmit={this.handleSubmit} className='add-plant-form'>
+                    <div className='row'>
+                    <div className='form-group'>
+                    <label htmlFor="nickName" className='form-label'>Nick Name: </label>
+                    <input className='text-input' type="text" name="nickName" id="nickName" onChange={this.handleChange}/>
+                    </div>
+                    <div className='form-group'>
+                    <label htmlFor="image" className='form-label'>Image: </label>
+                    <input type="text" name="image" id="image" onChange={this.handleChange} value={this.state.image} className='text-input'/>
+                    </div>
+                    <div className='form-group'>
+                    <label htmlFor="lastWatered" className='form-label'>Last Watered: </label>
+                    <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange} className='text-input'/>
+                    </div>
+                    </div>
+                    <div className='row'>
+                    <div className='form-group'>
+                    <label className='form-label' htmlFor="howOftenToWater">How Often To Water: </label>
+                    <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} className='text-input'/>
+                    </div>
+                    <div className='form-group'>
+                    <label htmlFor="lastFertilized" className='form-label'>Last Fertilized: </label>
+                    <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} className='text-input'/>
+                    </div>
+                    <div className='form-group'>
+                    <label htmlFor="lightingRequirements" className='form-label'>Light Needs: </label>
+                    <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} className='text-input'/>
+                    </div>
+                    </div>
+                    <div className='row' className='notes'>
+                    <div className='form-group'>
+                    <label htmlFor="notes" className='form-label'>Notes: </label>
+                    <input type="text" name="notes" id="notes" onChange={this.handleChange} className='textarea-input'/>
+                    </div>
+                    </div>
+                    <div className='row-button'>
+                    <input type="submit" value="Add Plant" className='add-search-button'/>
+                    </div>
                 </form>
-                <button onClick={this.cancel}>Cancel</button>
-                
-            </div>
+                </div>
         )
     }
 }

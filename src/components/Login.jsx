@@ -13,12 +13,12 @@ class Login extends Component {
         <div className='form-content'>
           <form>
             <div className='input-couple'>
-              <label>Username</label>
-              <input placeholder="Enter your username"/>
+              <label className='signuploginlabel'>Username</label>
+              <input placeholder="Enter your username" className='text-input'/>
             </div>
             <div className='input-couple'>
-              <label>Password</label>
-              <input placeholder="Enter your password"/>
+              <label className='signuploginlabel'>Password</label>
+              <input placeholder="Enter your password" className='text-input'/>
             </div>
             <div className='form-actions'>
               <button className='primary-button' type="submit">Login</button>

@@ -46,10 +46,32 @@ body {
   margin: 30px;
 }
 
-.search{
-  width: 300px;
+.form-container{
+  display: flex;
+  flex-flow: wrap;
+  align-items: baseline;
+  border: 2px solid #231B1B;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search, .text-input{
+  width: 250px;
   height: 35px;
 }
+
+.text-input{
+  margin: 0px 10px 5px 0px;
+  
+}
+
+.textarea-input {
+  width: 250px;
+  height: 180px;
+}
+
 
 .plant-item-grid {
   display: flex;
@@ -57,23 +79,53 @@ body {
   justify-content: space-around;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label{
+  align-self: flex-start
+}
+
+.row{
+  display: flex;
+}
+
+.add-plant-form{
+  margin-left: 25%;
+  width: 80%;
+  overflow: auto;
+}
+
 .plant-item {
   /* display: flex;
   flex-direction: column; */
   /* background-color: #FBF1EF; */
-  border: 2px solid #002500;
+  border: 2px solid #231B1B;
   border-radius: 5px;
   width: 25%;
   height: 350px;
   margin: 10px;
 }
 
-button, .search-button{
+button, .search-button, .add-search-button{
   background: #002500;
   color: white;
   border-radius: 5px;
   padding: 4px;
   font-size: 18px;
+}
+
+.row-button{
+  display: flex;
+  justify-content: flex-end;
+  width: 65%;
+  margin-bottom: 10px;
+}
+
+.add-search-button{
+  margin: 0px 0px 10px 600px;
 }
 
 .primary-button, .secondary-button {
@@ -133,6 +185,10 @@ label {
   font-size: 18px;
 }
 
+.signuploginlabel{
+  padding: 10px;
+}
+
 .center-hero {
   position: absolute;
   top: 50%;
@@ -146,6 +202,7 @@ label {
   margin: 0 auto;
   position: relative;
   top: 110px;
+  margin-right: 10px;
 }
 
 .login-text {
@@ -155,11 +212,6 @@ label {
   top: 110px;
 }
 
-
-.signuploginbox {
-  size: 100;
-  height: 25px;
-}
 
 /* HEADER STYLES */
 

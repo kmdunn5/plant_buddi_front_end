@@ -59,9 +59,9 @@ class ShowPlant extends Component {
   deletePlant = () => {
     fetch( baseURL + '/plants/' + this.props.match.params.id, {
       method: 'DELETE'
-    }).then(this.setState({ 
+    }).then(setTimeout(()=> {this.setState({ 
         redirect: true 
-    }))
+    })}, 1000))
   }
 
   // HANDLE FORM CHANGE EVENT
@@ -133,7 +133,7 @@ class ShowPlant extends Component {
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
-                { this.state.plant.nickName == '' &&
+                { this.state.plant.nickName === '' &&
                   <h2>{ this.state.plant.commonName }</h2>
                 }
                 { this.state.plant.nickName !== '' &&
@@ -168,38 +168,44 @@ class ShowPlant extends Component {
           <Link to='/plants'> <button className='primary-button'>Back to plants</button></Link>
         </div>
         ) : (
-          <div>
+          <div className='form-container'>
           <h1>Edit Plant</h1>
-          <form onSubmit={ ( event ) => this.handleUpdate( event, this.state.plant._id ) } >
-            <div className='input-couple'>
+          <form onSubmit={ ( event ) => this.handleUpdate( event, this.state.plant._id ) } className='add-plant-form'>
+          <div className='row'>
+            <div className='form-group'>
               <label htmlFor="nickName">Nick Name: </label>
-              <input type="text" name="nickName" id="nickName" onChange={this.handleChange} value={ this.state.nickName }/>
+              <input type="text" name="nickName" id="nickName" onChange={this.handleChange} value={ this.state.nickName } className='text-input'/>
             </div>
-            <div className='input-couple'>
+            <div className='form-group'>
               <label htmlFor="image">Image: </label>
-              <input type="text" name="image" id="image" onChange={this.handleChange} value={ this.state.image }/>
+              <input type="text" name="image" id="image" onChange={this.handleChange} value={ this.state.image } className='text-input'/>
             </div>
-            <div className='input-couple'>
+            <div className='form-group'>
               <label htmlFor="lastWatered">Last Watered: </label>
-              <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange} value={ this.state.lastWatered }/>
+              <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange} value={ this.state.lastWatered } className='text-input'/>
             </div>
-            <div className='input-couple'>
+            </div>
+            <div className='row'>
+            <div className='form-group'>
               <label htmlFor="howOftenToWater">How Often To Water: </label>
-              <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.howOftenToWater } />
+              <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.howOftenToWater } className='text-input'/>
             </div>
-            <div className='input-couple'>
+            <div className='form-group'>
               <label htmlFor="lastFertilized">Last Fertilized: </label>
-              <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.state.lastFertilized }/>
+              <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.state.lastFertilized } className='text-input'/>
             </div>
-            <div className='input-couple'>
+            <div className='form-group'>
               <label htmlFor="lightingRequirements">Light Needs: </label>
-              <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.state.lightingRequirements } />
+              <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.state.lightingRequirements } className='text-input'/>
             </div>
-            <div className='input-couple'>
+            </div>
+            <div className='row'>
+            <div className='form-group'>
               <label htmlFor="notes">Notes: </label>
-              <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes }/>
+              <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } className='textarea-input'/>
             </div>
-            <div className='form-actions'>
+            </div>
+            <div className='row-button'>
               <button className='primary-button' type="submit">Update plant buddi</button>
               <button className='secondary-button' onClick={ () => this.toggleUpdateView( ) }>Cancel</button>
             </div>
