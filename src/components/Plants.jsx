@@ -49,15 +49,18 @@ class Plants extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
-    let searchParam = this.state.search
-    fetch(baseURL + '/plants/search/' + searchParam)
-    .then(data => { return data.json() }, err => console.log(err))
-    .then(parsedData => this.setState({
-        foundPlants: parsedData.data,
-        search: '',
-        searchState: true
-    }), err => console.log(err));
+    if (this.state.search === '') {
+      return
+    } else {
+      let searchParam = this.state.search
+      fetch(baseURL + '/plants/search/' + searchParam)
+      .then(data => { return data.json() }, err => console.log(err))
+      .then(parsedData => this.setState({
+          foundPlants: parsedData.data,
+          search: '',
+          searchState: true
+      }), err => console.log(err));
+    }
   }
 
   handleAdd(plant) {
