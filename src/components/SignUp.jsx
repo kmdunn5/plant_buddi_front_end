@@ -7,28 +7,28 @@ class SignUp extends Component {
     return (
       <div>
         <div className='header-container-signup'>
-        <div className='center-hero-signup'>
-      <h1 className='signup-text'>Sign Up for Plant Buddi</h1>
-      </div>
-      </div>
-      <div className="main-content">
-        <div className='form-content'>
-          <form>
-            <div className='input-couple'>
-              <label className='signuploginlabel'>Username</label>
-              <input className='text-input' placeholder="Enter your desired username"/>
-            </div>
-            <div className='input-couple'>
-              <label className='signuploginlabel'>Password</label>
-              <input className='text-input' placeholder="Enter your password"/>
-            </div>
-            <div className='form-actions'>
-              <button className='primary-button' type="submit">Sign Up</button>
-              <button className='secondary-button' formaction='/'>Cancel</button>
-            </div>
-          </form>
+          <div className='center-hero-signup'>
+            <h1 className='signup-text'>Sign Up for Plant Buddi</h1>
+          </div>
         </div>
-      </div>
+        <div className="main-content">
+          <div className='form-content'>
+            <form>
+              <div className='input-couple'>
+                <label className='signuploginlabel'>Username</label>
+                <input className='text-input' placeholder="Enter your desired username"/>
+              </div>
+              <div className='input-couple'>
+                <label className='signuploginlabel'>Password</label>
+                <input className='text-input' placeholder="Enter your password"/>
+              </div>
+              <div className='form-actions'>
+                <button className='primary-button' type="submit">Sign Up</button>
+                <button className='secondary-button' formaction='/'>Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }
