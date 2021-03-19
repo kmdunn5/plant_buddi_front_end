@@ -59,9 +59,9 @@ class ShowPlant extends Component {
   deletePlant = () => {
     fetch( baseURL + '/plants/' + this.props.match.params.id, {
       method: 'DELETE'
-    }).then(setTimeout(this.setState({ 
+    }).then(setTimeout(()=> {this.setState({ 
         redirect: true 
-    }), 1000))
+    })}, 1000))
   }
 
   // HANDLE FORM CHANGE EVENT
