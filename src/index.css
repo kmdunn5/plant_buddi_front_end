@@ -212,6 +212,66 @@ label {
   top: 110px;
 }
 
+.show-plants-content{
+  width: 60%;
+  border: 2px solid #002500;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.show-plant-img {
+  width: 380px;
+  height: 274px;
+}
+
+.show-me-plant {
+  width: 100%;
+  height: 100%;
+  margin: 25px;
+}
+
+.showme-title{
+  margin: 20px 10px;
+}
+
+.user-actions-header{
+  display: flex;
+  align-items: baseline;
+}
+
+.user-action-options{
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.show-plant-container{
+  width: 100%;
+  display: flex;
+}
+
+.show-plant-name{
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+  margin-top: -15px;
+}
+
+.show-large-text{
+  font-size: 18px;
+  margin-top: -18px;
+}
+
+.show-plant-info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+}
+
+.back{
+  margin: 10px;
+}
 
 /* HEADER STYLES */
 
