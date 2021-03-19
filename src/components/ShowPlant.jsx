@@ -167,7 +167,7 @@ class ShowPlant extends Component {
             </div>
           </div>
           </div>
-          <Link to='/plants'> <button className='primary-button' className='back'>Back to plants</button></Link>
+          <Link to='/plants'> <button className='primary-button back'>Back to plants</button></Link>
         </div>
         ) : (
         <div className='form-container'>
@@ -188,22 +188,20 @@ class ShowPlant extends Component {
               </div>
             </div>
             <div className='form-group'>
-              {/* <label htmlFor="notes">Notes: </label>
-              <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } className='textarea-input'/> */}
               <div className='row'>
-              <div className='form-group'>
-                <label htmlFor="howOftenToWater">How Often To Water: </label>
-                <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.howOftenToWater } className='text-input'/>
+                <div className='form-group'>
+                  <label htmlFor="howOftenToWater">How Often To Water: </label>
+                  <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.howOftenToWater } className='text-input'/>
+                </div>
+                <div className='form-group'>
+                  <label htmlFor="lastFertilized">Last Fertilized: </label>
+                  <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.state.lastFertilized } className='text-input'/>
+                </div>
+                <div className='form-group'>
+                  <label htmlFor="lightingRequirements">Light Needs: </label>
+                  <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.state.lightingRequirements } className='text-input'/>
+                </div>
               </div>
-              <div className='form-group'>
-                <label htmlFor="lastFertilized">Last Fertilized: </label>
-                <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange} value={ this.state.lastFertilized } className='text-input'/>
-              </div>
-              <div className='form-group'>
-                <label htmlFor="lightingRequirements">Light Needs: </label>
-                <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange} value={ this.state.lightingRequirements } className='text-input'/>
-              </div>
-            </div>
             </div>
             <div className='row'>
               <div className='form-group'>

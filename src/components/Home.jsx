@@ -37,7 +37,7 @@ class Home extends Component {
             <img src="https://i.ibb.co/Kjk2ZJV/grape-hyacinths-royalty-free-image-115961090-1544041991.jpg" alt="grape hyacinths" border="0" className='feature-image'/>
             <div className='feature-group-text'>
               <h2>Plant Buddi Do It All</h2>
-              <p className='descriptive-text'>Plant Buddi is your one-stop-shop for all things home plant care. Anything you want to know, we can keep track of it for. Don't forget to give your Buddi a nickname! That way we can love your Buddi too!</p>
+              <p className='descriptive-text'>Plant Buddi is your one-stop-shop for all things home plant care. Anything you want to know, we can keep track of it for you. Don't forget to give your Buddi a nickname! That way we can love your Buddi too!</p>
             </div>
           </div>
         </div>
