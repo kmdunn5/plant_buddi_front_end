@@ -12,7 +12,7 @@ class Header extends Component {
           <Link to='/'><h1>Plant Buddi</h1></Link>
           <div className='app-icon-container2'></div>
         </div>
-        <h4>Plant Care Tracker</h4>
+        <Link to='/plants'><h4>Plant Care Tracker</h4></Link>
         <div className='header-links'>
           <Link to='/plants'><h2>Plants!</h2></Link>
           <Link to='/signup'><h2>Sign Up</h2></Link>
