@@ -82,6 +82,15 @@ Plant Buddi is a tool to help you keep track of all of your plant friends. Searc
 * Automatic alerts for when a user hasn't watered their plants within the how often to water time frame
 
 
+## Things to Update and Improve
+* Error handling/messages and add error components
+* Improve the react routers
+* Search improvements,
+* Handling search when there are holes in the API's return data
+* Improved user experience and user flow
+* Implement a CSS framework
+* Include SASS
+
 
 ## Resources and Credit
 
