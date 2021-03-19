@@ -65,6 +65,10 @@ class AddForm extends Component {
         }).catch (error => console.log({ 'Error': error }))
     };
 
+    cancel() {
+        this.props.resetSearch()
+    }
+
     render() {
         return(
             <div>
@@ -86,6 +90,8 @@ class AddForm extends Component {
                     <input type="text" name="notes" id="notes" onChange={this.handleChange}/>
                     <input type="submit" value="Add Plant"/>
                 </form>
+                <button onClick={this.cancel}>Cancel</button>
+                
             </div>
         )
     }
