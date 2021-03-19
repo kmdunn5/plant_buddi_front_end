@@ -167,7 +167,7 @@ class ShowPlant extends Component {
             </div>
           </div>
           </div>
-          <Link to='/plants'> <button className='primary-button'>Back to plants</button></Link>
+          <Link to='/plants'> <button className='primary-button' className='back'>Back to plants</button></Link>
         </div>
         ) : (
         <div className='form-container'>
@@ -207,7 +207,6 @@ class ShowPlant extends Component {
               <div className='form-group'>
                 <label htmlFor="notes">Notes: </label>
                 <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } className='textarea-input'/>
->>>>>>> ae0b523f3065f3ff64856e1139fbc9a471b6c2e5
               </div>
             </div>
             <div className='row-button'>
