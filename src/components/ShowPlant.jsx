@@ -133,20 +133,35 @@ class ShowPlant extends Component {
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
+                { this.state.plant.nickName == '' &&
+                  <h2>{ this.state.plant.commonName }</h2>
+                }
+                { this.state.plant.nickName !== '' &&
                 <h2>{ this.state.plant.nickName } - { this.state.plant.commonName }</h2>
-                <p>{ this.state.plant.scientificName }</p>
+                }
+                { this.state.plant.scientificName !== '' &&
+                <p className='large-text'><strong>Scientific name:</strong> { this.state.plant.scientificName }</p>
+                }
               </div>
               <div className='show-plant-info'>
                 <div className='show-plant-info-text'>
-                  <p className='large-text'>Last watered: { this.state.plant.lastWatered }</p>
-                  <p className='large-text'>Water every: { this.state.plant.howOftenToWater }</p>
-                  <p className='large-text'>Last fertilized: { this.state.plant.lastFertilized }</p>
-                  <p className='large-text'>Light needs: { this.state.plant.lightingRequirements }</p>
+                  <p className='large-text'><strong>Last watered:</strong> { this.state.plant.lastWatered }</p>
+                  { this.state.plant.howOftenToWater !== '' &&
+                  <p className='large-text'><strong>Water every:</strong>  { this.state.plant.howOftenToWater }</p>
+                  }
+                  { this.state.plant.lastFertilized !== '' &&
+                  <p className='large-text'><strong> Last fertilized:</strong> { this.state.plant.lastFertilized }</p>
+                  }
+                  { this.state.plant.lightingRequirements !== '' &&
+                  <p className='large-text'><strong>Light needs:</strong> { this.state.plant.lightingRequirements }</p>
+                  }
                 </div>
+                { this.state.plant.notes !== '' &&
                 <div className='show-plant-info-notes'>
-                  <p className='large-text'>Notes on your buddi</p>
+                  <p className='large-text'><strong>Notes on your buddi</strong></p>
                   <p>{ this.state.plant.notes }</p>
                 </div>
+                }
               </div>
             </div>
           </div>
