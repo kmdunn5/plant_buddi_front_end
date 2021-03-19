@@ -1,70 +1,98 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Plant Buddi
 
-## Available Scripts
+Live site: <https://plant-buddi.herokuapp.com/>
 
-In the project directory, you can run:
+Frontend Repo: <https://github.com/kmdunn5/plant_buddi_front_end>
 
-### `npm start`
+Backend Repo: <https://github.com/kmdunn5/plant-buddi-backend>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Creators
+[Brittani Savage](https://github.com/itsmeBrittani)
 
-### `npm test`
+[Ken Dunn](https://github.com/kmdunn5)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Kirsten Green](https://github.com/kirstengreen)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Overview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+During our full-stack unit at General Assembly (Jan - Apr 2021), we created an app that reflected our newly acquired skills in the MERN stack. To figure out what we wanted to do for this group project, we brainstormed ideas by discussing our interests. We all found a common need for a better way to track the care of our plants. We came up with the name Plant Buddi and started listing all of the things we might want to keep track of when caring for plants. Once we defined the features we wanted in MVP, we began development. 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## About Plant Buddi
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Plant Buddi is a tool to help you keep track of all of your plant friends. Search our database to find a plant friend to add to your plants list. You can edit each plant to include information such as nickname, last watered date, and lighting needs. If you no longer need to keep track of a buddi, you can remove them from your list. Return to Plant Buddi whenever you need to reference something about your buddis to make sure they get the care that they need to be happy and healthy.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Technologies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* HTML5
+* CSS3
+* JavaScript
+* React.js
+* React Router
+* Node.js
+* node-fetch
+* npm
+* Express
+* Mongoose
+* Cors
+* MongoDB
+* Heroku
+* VS Code
+* Google Docs
+* Trello - Project planning
+* Figma - Design, wireframes, and site planning
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## User Stories
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* As a user, I can view a list of my plants
+* As a user, I can search for a plant to add to my list
+* As a user, I can add a plant to my list of plants
+* As a user, I can see a summary of my plant in the plants list
+* As a user, when I select a plan on the plants list page, I can view more details on the plant I clicked on (plant details page)
+* AS a user, I can edit a plant when I am on the plant details page
+* As a user, I can delete a plant when I am on the plant details page
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Current Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Users can see a complete list of the plants that have been added
+* Users can search for a plant they want to add
+* Users can see a list of search results and choose which plant they want to add
+* Users can add information about the plant and add them to their plant list
+* Users can see a small summary of their plant on the plant list page
+* Users can select a plant to see the full details of their plant
+* Users can edit and delete their plants from the plant's details page
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Future Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Allow users to have personal accounts | User Auth
+* Allow users to search through their plants
+* Add calendars to allow users to assign dates
+* Use dates to allow users to create reminders to help them care for their plants
+* Automatic alerts for when a user hasn't watered their plants within the how often to water time frame
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Things to Update and Improve
+* Error handling/messages and add error components
+* Improve the react routers
+* Search improvements,
+* Handling search when there are holes in the API's return data
+* Improved user experience and user flow
+* Implement a CSS framework
+* Include SASS
+
+
+## Resources and Credit
+
+Special thanks to the following:
+* Trefle: A global plants API – <https://trefle.io/>
