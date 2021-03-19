@@ -2,13 +2,17 @@
 # Plant Buddi
 
 Live site: <https://plant-buddi.herokuapp.com/>
+
 Frontend Repo: <https://github.com/kmdunn5/plant_buddi_front_end>
+
 Backend Repo: <https://github.com/kmdunn5/plant-buddi-backend>
 
 
 ### Creators
 [Brittani Savage](https://github.com/itsmeBrittani)
-[Ken Dunn](https://github.com/kmdunn5)
+
+Ken Dunn](https://github.com/kmdunn5)
+
 [Kirsten Green](https://github.com/kirstengreen)
 
 
