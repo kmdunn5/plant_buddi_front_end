@@ -181,6 +181,10 @@ label {
   font-size: 18px;
 }
 
+.signuploginlabel{
+  padding: 10px;
+}
+
 .center-hero {
   position: absolute;
   top: 50%;
@@ -194,6 +198,7 @@ label {
   margin: 0 auto;
   position: relative;
   top: 110px;
+  margin-right: 10px;
 }
 
 .login-text {
