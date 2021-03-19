@@ -187,11 +187,9 @@ class ShowPlant extends Component {
                 <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange} value={ this.state.lastWatered } className='text-input'/>
               </div>
             </div>
-            <div className='row'>
             <div className='form-group'>
               <label htmlFor="notes">Notes: </label>
               <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } className='textarea-input'/>
-=======
               <div className='form-group'>
                 <label htmlFor="howOftenToWater">How Often To Water: </label>
                 <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange} value={ this.state.howOftenToWater } className='text-input'/>
