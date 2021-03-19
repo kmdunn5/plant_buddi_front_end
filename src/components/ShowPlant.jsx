@@ -121,7 +121,7 @@ class ShowPlant extends Component {
         { !this.state.update ? (
         <div className='show-plants-content'>
           <div className='user-actions-header'>
-            <h2>Your Plant Buddi</h2>
+            <h2 className='showme-title'>Your Plant Buddi</h2>
             <div className='user-action-options'>
               <button className='primary-button' onClick={ () => this.toggleUpdateView() }>Edit</button>
               <button className='secondary-button' onClick={ () => this.deletePlant() }>Delete</button>
@@ -129,7 +129,7 @@ class ShowPlant extends Component {
           </div>
           <div className='show-plant-container'>
             <div className='show-plant-img'>
-              <img src={this.state.plant.image} alt={ this.state.plant.commonName } />
+              <img src={this.state.plant.image} alt={ this.state.plant.commonName } className='show-me-plant'/>
             </div>
             <div className='show-plant-content'>
               <div className='show-plant-name'>
@@ -140,9 +140,10 @@ class ShowPlant extends Component {
                 <h2>{ this.state.plant.nickName } - { this.state.plant.commonName }</h2>
                 }
                 { this.state.plant.scientificName !== '' &&
-                <p className='large-text'><strong>Scientific name:</strong> { this.state.plant.scientificName }</p>
+                <p className='show-large-text'><i><strong>Scientific name:</strong> { this.state.plant.scientificName }</i></p>
                 }
               </div>
+              <div className='row'>
               <div className='show-plant-info'>
                 <div className='show-plant-info-text'>
                   <p className='large-text'><strong>Last watered:</strong> { this.state.plant.lastWatered }</p>
@@ -160,10 +161,11 @@ class ShowPlant extends Component {
                 <div className='show-plant-info-notes'>
                   <p className='large-text'><strong>Notes on your buddi</strong></p>
                   <p>{ this.state.plant.notes }</p>
-                </div>
+                  </div>
                 }
               </div>
             </div>
+          </div>
           </div>
           <Link to='/plants'> <button className='primary-button'>Back to plants</button></Link>
         </div>
@@ -203,7 +205,7 @@ class ShowPlant extends Component {
             <div className='form-group'>
               <label htmlFor="notes">Notes: </label>
               <input type="text" name="notes" id="notes" onChange={this.handleChange} value={ this.state.notes } className='textarea-input'/>
-            </div>
+              </div>
             </div>
             <div className='row-button'>
               <button className='primary-button' type="submit">Update plant buddi</button>
