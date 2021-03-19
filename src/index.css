@@ -38,7 +38,7 @@ body {
 
 .feature-image, .feature-group-text {
   width: 50%;
-  height: 250px;
+  height: 300px;
 }
 
 .search-container {
@@ -271,6 +271,13 @@ label {
 
 .back{
   margin: 10px;
+}
+
+.descriptive-text{
+  text-align: justify;
+  margin: 15px;
+  font-size: 1.1vw;
+  line-height: 1.6;
 }
 
 /* HEADER STYLES */
