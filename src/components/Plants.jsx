@@ -48,16 +48,10 @@ class Plants extends Component {
   }
 
   handleSubmit = (e) => {
+    e.preventDefault();
     if (this.state.search === '') {
-      e.preventDefault()
-      
-      this.setState({
-        search: '',
-        searchState: false
-      })
+      return
     } else {
-      e.preventDefault();
-
       let searchParam = this.state.search
       fetch(baseURL + '/plants/search/' + searchParam)
       .then(data => { return data.json() }, err => console.log(err))
