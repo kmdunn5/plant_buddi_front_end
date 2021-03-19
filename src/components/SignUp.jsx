@@ -15,12 +15,12 @@ class SignUp extends Component {
         <div className='form-content'>
           <form>
             <div className='input-couple'>
-              <label>Username</label>
-              <input className='signuplogininbox' placeholder="Enter your desired username"/>
+              <label className='signuploginlabel'>Username</label>
+              <input className='text-input' placeholder="Enter your desired username"/>
             </div>
             <div className='input-couple'>
-              <label>Password</label>
-              <input className='signuplogininbox' placeholder="Enter your password"/>
+              <label className='signuploginlabel'>Password</label>
+              <input className='text-input' placeholder="Enter your password"/>
             </div>
             <div className='form-actions'>
               <button className='primary-button' type="submit">Sign Up</button>
